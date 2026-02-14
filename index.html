@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <title>Controle de saída</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Controle de Veículo</h1>
+        </header>
+
+        <!-- Formulário de Registro -->
+        <section class="card">
+            <h2>Novo Registro</h2>
+            <form id="form">
+                <input type="date" id="data" required>
+                <input type="text" id="cliente" placeholder="Cliente" required>
+                <input type="time" id="saida" required>
+                <input type="time" id="retorno" required>
+                <input type="text" id="funcionario" placeholder="Funcionário" required>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <!-- Lista de Registros -->
+        <section class="card">
+            <h2>Registros</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Saída</th>
+                        <th>Retorno</th>
+                        <th>Horas</th>
+                        <th>Funcionário</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela"></tbody>
+            </table>
+        </section>
+
+        <!-- Relatório de Horas -->
+        <section class="card">
+            <h2>Relatório de Horas</h2>
+            <div id="relatorioHoras"></div>
+        </section>
+
+        <!-- Exportar / Limpar -->
+        <section class="actions">
+            <button onclick="exportarCSV()">Exportar CSV</button>
+            <button onclick="limparDados()" class="danger">Limpar Tudo</button>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

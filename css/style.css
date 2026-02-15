@@ -1,4 +1,3 @@
-/* Reset simples */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +16,6 @@ body {
     margin: auto;
 }
 
-/* Header */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -27,7 +25,6 @@ header h1 {
     color: #007bff;
 }
 
-/* Cards */
 .card {
     background: #fff;
     padding: 20px;
@@ -41,7 +38,6 @@ header h1 {
     color: #007bff;
 }
 
-/* Formulário */
 form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -70,7 +66,6 @@ form button:hover {
     background: #0056b3;
 }
 
-/* Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -90,7 +85,6 @@ th {
     border-radius: 5px;
 }
 
-/* Botões de ação */
 .actions {
     display: flex;
     justify-content: space-between;
@@ -114,14 +108,12 @@ th {
     color: white;
 }
 
-/* Relatório */
 #relatorioHoras p {
     margin-bottom: 8px;
     font-weight: bold;
     color: #007bff;
 }
 
-/* Responsivo */
 @media (max-width: 600px) {
     form {
         grid-template-columns: 1fr;

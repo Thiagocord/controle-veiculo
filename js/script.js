@@ -4,12 +4,12 @@ const tabela = document.getElementById("tabela");
 const form = document.getElementById("form");
 const relatorioDiv = document.getElementById("relatorioHoras");
 
-// Salvar LocalStorage
+
 function salvarLocal() {
     localStorage.setItem("controleVeiculo", JSON.stringify(dados));
 }
 
-// Calcular minutos e formatar
+
 function calcularMinutos(saida, retorno) {
     let s = new Date("1970-01-01T" + saida);
     let r = new Date("1970-01-01T" + retorno);
@@ -22,7 +22,7 @@ function formatarHoras(minutos) {
     return `${h}h ${m}m`;
 }
 
-// Renderizar tabela e relatório
+
 function render() {
     tabela.innerHTML = "";
     let resumo = {};
@@ -40,20 +40,18 @@ function render() {
         </tr>
         `;
 
-        // Relatório
+
         let min = calcularMinutos(item.saida, item.retorno);
         if (!resumo[item.funcionario]) resumo[item.funcionario] = 0;
         resumo[item.funcionario] += min;
     });
 
-    // Relatório de horas
     relatorioDiv.innerHTML = "";
     for (let func in resumo) {
         relatorioDiv.innerHTML += `<p>${func}: ${formatarHoras(resumo[func])}</p>`;
     }
 }
 
-// Adicionar registro
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -71,14 +69,12 @@ form.addEventListener("submit", function (e) {
     form.reset();
 });
 
-// Excluir registro
 function excluir(index) {
     dados.splice(index, 1);
     salvarLocal();
     render();
 }
 
-// Exportar CSV
 function exportarCSV() {
     let csv = "Data,Cliente,Saida,Retorno,Funcionario\n";
     dados.forEach(d => {
@@ -93,7 +89,6 @@ function exportarCSV() {
     a.click();
 }
 
-// Limpar tudo
 function limparDados() {
     if (confirm("Tem certeza que deseja apagar tudo?")) {
         dados = [];
